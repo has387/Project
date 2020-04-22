@@ -1,5 +1,4 @@
 files=$(ls -p | grep -v / | wc -l)
-
 echo "Welcome to the GuessingGame!"
 echo "How many files are there in your current directory? let's guess!"
 read -p "Please enter your guess:" guess
@@ -14,13 +13,10 @@ ges=$2
 		echo "too high"
 	fi
 }
-
-
 while [[ $guess != $files ]]
 do
 	echo "You entered a wrong number."
 	read -p "Your number is $(updown $files $guess). Please enter a new guess:" guess
 done
-
 echo "Congraturation!"
 echo "You guessed right! Game is over now"
